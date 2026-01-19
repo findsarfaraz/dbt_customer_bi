@@ -1,0 +1,16 @@
+
+sources:
+  - name: source_data
+    database: dev
+    schema: source_db  
+    tables:
+      - name: fact_sales
+      - name: fact_returns
+      - name: dim_customer
+      - name: dim_product
+      - name: dim_date
+      - name: dim_store
+
+
+
+      

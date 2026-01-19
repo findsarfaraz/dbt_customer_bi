@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: bronze_date
+    description: "A date dimension table."
+    config:
+      materialized: table
+
+  - name: bronze_store
+    description: "A store dimension table."
+    columns:
+      - name: store_name
+        tests:
+          - accepted_values:
+              values: ['NY', 'CA', 'TX', 'FL', 'IL']

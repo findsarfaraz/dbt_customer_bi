@@ -3,13 +3,26 @@ version: 2
 models:
   - name: bronze_date
     description: "A date dimension table."
-    config:
-      materialized: table
+    columns:
+      - name: date
+        tests:
+          - not_null
+          - unique
+
+
 
   - name: bronze_store
     description: "A store dimension table."
     columns:
       - name: store_name
-        tests:
+        data_tests:
           - accepted_values:
-              values: ['NY', 'CA', 'TX', 'FL', 'IL']
+              values:
+                - "MegaMart Manhattan"
+                - "MegaMart Brooklyn"
+                - "MegaMart Austin"
+                - "MegaMart San Jose"
+                - "MegaMart Toronto"
+                
+
+  

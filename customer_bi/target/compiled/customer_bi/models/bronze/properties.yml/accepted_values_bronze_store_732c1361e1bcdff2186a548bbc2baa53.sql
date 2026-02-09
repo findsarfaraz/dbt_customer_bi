@@ -1,12 +1,4 @@
 
-    select
-      count(*) as failures,
-      count(*) != 0 as should_warn,
-      count(*) != 0 as should_error
-    from (
-      
-    
-  
     
     
 
@@ -24,12 +16,7 @@ with all_values as (
 select *
 from all_values
 where value_field not in (
-    'NY','CA','TX','FL','IL'
+    'MegaMart Manhattan','MegaMart Brooklyn','MegaMart Austin','MegaMart San Jose','MegaMart Toronto'
 )
 
 
-
-  
-  
-      
-    ) dbt_internal_test

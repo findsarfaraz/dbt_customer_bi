@@ -1,3 +1,7 @@
-SELECT payment_method, sum(gross_amount) FROM   
-{{ source('source_data', 'fact_sales') }}
+
+
+SELECT payment_method,
+         sum(gross_amount)  AS total_gross_amount
+FROM   
+    {{ ref('bronze_sales') }}
 group by payment_method
